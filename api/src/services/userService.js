@@ -6,24 +6,36 @@ const loginUser = async (email, password) => {
     const user = await userRepository.loginUser(email);
     if (!user) {
       return {
-        status: statusCode.UNAUTHORIZED,
-        message: 'Authentication failed. User not found',
-      };
-      }
-    if (user.password === password) {
-      const payload = { id: user.id };
-      const token = jwt.sign(payload, process.env.SECRET_KEY);
-      return {
         status: statusCode.OK,
-        message: 'Success!',
-        user,
-        token,
-      };
+        message: 'User not found',
+        response: null
+      }
     }
     return {
-        status: statusCode.UNAUTHORIZED,
-        message: 'Password is incorrect',
-      };
+      status: statusCode.OK,
+      message: 'Success!',
+      response: user
+    }
+    // if (!user) {
+    //   return {
+    //     status: statusCode.UNAUTHORIZED,
+    //     message: 'Authentication failed. User not found',
+    //   };
+    //   }
+    // if (user.password === password) {
+    //   const payload = { id: user.id };
+    //   const token = jwt.sign(payload, process.env.SECRET_KEY);
+    //   return {
+    //     status: statusCode.OK,
+    //     message: 'Success!',
+    //     user,
+    //     token,
+    //   };
+    // }
+    // return {
+    //     status: statusCode.UNAUTHORIZED,
+    //     message: 'Password is incorrect',
+    //   };
 }
 
 const createUser = async ({ userData, credentials }) => {

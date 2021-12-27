@@ -10,6 +10,7 @@ import UserToTeam from './userToTeamModel';
 
 
 User.hasMany(UserData);
+UserData.belongsTo(User);
 
 Match.hasMany(MatchParticipant);
 User.hasMany(MatchParticipant);
@@ -18,8 +19,10 @@ Team.hasMany(MatchParticipant);
 TeamType.hasMany(MatchParticipant);
 
 User.hasMany(UserToTeam);
+UserToTeam.belongsTo(User);
 Team.hasMany(UserToTeam);
 Role.hasMany(UserToTeam);
+UserToTeam.belongsTo(Role);
 
 Role.hasMany(MatchPosition);
 

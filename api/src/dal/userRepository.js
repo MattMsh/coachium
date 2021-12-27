@@ -2,7 +2,12 @@ import { User, UserData } from '../models';
 
 const loginUser = async (email) => {
   try {
-    const user = await User.findOne({ where: { email } });
+    const user = await UserData.findOne({
+      where: { email },
+      include: [{
+        model: User,
+      }]
+  });
     return user;
   } catch (err) {
       throw Error(err);

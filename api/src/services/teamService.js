@@ -1,6 +1,15 @@
 import statusCode from 'http-status';
 import teamRepository from '../dal/teamRepository';
 
+const getAll = async () => {
+  const teams = await teamRepository.getAll();
+  return {
+    status: statusCode.OK,
+    message: 'All teams',
+    teams
+  }
+}
+
 const createTeam = async (name) => {
   try {
     const team = await teamRepository.createTeam(name);
@@ -41,6 +50,7 @@ const addUsers = async (users, teamId) => {
 }
 
 export default {
+  getAll,
   createTeam,
   updateTeam,
   addUsers
