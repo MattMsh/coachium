@@ -81,8 +81,7 @@ const matches = [{
   "judge": "Rayshell"
 }]
 
-const Matches = () => {
-  return <div style={{ height: '400px', width: '100%' }}>
+const Matches = () => <div style={{ height: '400px', width: '100%' }}>
           <DataGrid
             rows={matches}
             columns={columns}
@@ -90,7 +89,6 @@ const Matches = () => {
             rowsPerPageOptions={[5]}
             checkboxSelection
             />
-        </div>;
-}
+        </div>
 
 export default Matches;

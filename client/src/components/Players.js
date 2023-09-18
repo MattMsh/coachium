@@ -1,5 +1,3 @@
-const Players = () => {
-  return 'Players';
-}
+const Players = () => 'Players'
 
 export default Players;
