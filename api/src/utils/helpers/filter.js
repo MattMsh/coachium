@@ -1,7 +1,7 @@
 const { Op } = require('sequelize');
 const { statusesId } = require('../../constans/constants');
 
-const getFiltersForProject = (name, capital, dateStart, dateFinish) => {
+export const getFiltersForProject = (name, capital, dateStart, dateFinish) => {
     const filters = {};
     if (name) {
         filters.name = { [Op.iLike]: `%${name}%` };
@@ -19,4 +19,4 @@ const getFiltersForProject = (name, capital, dateStart, dateFinish) => {
     return filters;
 }
 
-module.exports = { getFiltersForProject }
+
