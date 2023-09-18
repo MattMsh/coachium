@@ -44,13 +44,11 @@ const addUsersToTeam = async (users, teamId) => {
     await Role.create({id: 1, name: 'Abrakadabra'})
     return await UserToTeam.bulkCreate(
       users.map(({ userId, roleId }) => {
-        return {
           userId,
           teamId,
           roleId,
           status: userStatus.ACTIVE
-        }
-      })
+        })
     );
   } catch (err) {
     throw Error(err);
