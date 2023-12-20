@@ -9,7 +9,7 @@
     "@mui/material": "^5.2.4",
     "@mui/styled-engine": "^5.14.7",
     "@mui/x-data-grid": "^5.2.1",
-    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
